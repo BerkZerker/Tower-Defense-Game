@@ -6,7 +6,7 @@ When working with Roo on this project, follow these guidelines to ensure consist
 
 ### Directory Structure Overview
 
-Each directory has a specific purpose and contains a README.txt file explaining its role:
+Each directory has a specific purpose and contains a README.md file explaining its role:
 
 - `scenes/`: Game scenes (levels, menus, etc)
 - `scripts/`: GDScript source files
@@ -20,7 +20,7 @@ Each directory has a specific purpose and contains a README.txt file explaining 
 
 1. Check `TODO.md` before starting work to see current tasks and progress
 2. After making changes, update `TODO.md` with completed items
-3. Each major feature should be documented in its directory's README.txt
+3. Each major feature should be documented in its directory's README.md
 
 ### Code Organization Rules
 
@@ -43,7 +43,7 @@ Each directory has a specific purpose and contains a README.txt file explaining 
 
 ### When Using Roo
 
-1. Always check relevant README.txt files in directories you're working with
+1. Always check relevant README.md files in directories you're working with
 2. Update TODO.md when completing tasks
 3. Follow existing code patterns and structure
-4. Document new features in appropriate README.txt files
+4. Document new features in appropriate README.md files

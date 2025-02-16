@@ -9,7 +9,10 @@ tower-defense-game/
 ├── scenes/       # Game scenes and levels
 │   ├── main_menu.tscn    # Main menu
 │   ├── game.tscn         # Main game scene
-│   └── ui_overlay.tscn   # UI overlay
+│   ├── ui_overlay.tscn   # UI overlay
+│   ├── levels/           # Individual level scenes
+│   ├── menus/           # Menu-related scenes
+│   └── ui/              # Reusable UI scene components
 ├── scripts/      # GDScript source files
 │   ├── managers/   # Game system managers
 │   └── entities/   # Unit and enemy scripts
