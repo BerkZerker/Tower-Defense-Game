@@ -1,7 +1,7 @@
 # Tower Defense Roguelike Project Plan
 
 ## Game Overview
-A unique hybrid combining tower defense, roguelike elements, and deck-building mechanics. Players defend a central tower using a deck of characters and spells, placing them strategically on a grid-based map while facing waves of enemies.
+A mobile-focused tower defense game combining roguelike elements and deck-building mechanics. Players defend a central tower using a deck of characters and spells, placing them strategically on a grid-based map while facing waves of enemies. The game is designed specifically for touch-based interaction and portrait orientation on mobile devices.
 
 ## Core Systems
 
@@ -92,6 +92,44 @@ A unique hybrid combining tower defense, roguelike elements, and deck-building m
 - Progression data
 - Save system
 
+### 4. Scene Compositions
+#### Main Game Scene (Node2D)
+- GridManager (Node2D)
+  - TileMap (for grid visualization)
+  - PlacementIndicator (Sprite2D)
+- UnitManager (Node2D)
+  - Characters (Node2D - parent for all player units)
+  - Enemies (Node2D - parent for enemy units)
+  - Projectiles (Node2D - parent for projectiles)
+- MainTower (StaticBody2D)
+  - Sprite
+  - CollisionShape2D
+  - HealthComponent
+- WaveManager (Node)
+  - SpawnPoints (Node2D - parent for spawn markers)
+
+#### Unit Scene Template (CharacterBody2D)
+- Sprite2D
+- CollisionShape2D
+- HealthComponent (Node)
+- CombatComponent (Node)
+- AnimationPlayer
+- Effects (Node2D - for status effects/particles)
+
+#### Card System Scene (CanvasLayer)
+- HandArea (Control)
+  - CardContainer (HBoxContainer)
+- DeckArea (Control)
+- ResourceDisplay (Control)
+
+#### UI Scene (CanvasLayer)
+- HUD (Control)
+  - TowerHealth
+  - WaveInfo
+  - Resources
+- PauseMenu (Control)
+- GameOver (Control)
+
 ## Implementation Phases
 
 ### Phase 1: Core Mechanics
@@ -156,10 +194,26 @@ A unique hybrid combining tower defense, roguelike elements, and deck-building m
 
 ## Technical Considerations
 - Godot version: 4.x
-- Performance optimization for large numbers of units
-- Save system implementation
-- Screen resolution handling
-- Input handling (mouse/touch)
+- Mobile platform targets:
+  - Android (minimum API level TBD)
+  - iOS (minimum version TBD)
+- Portrait orientation optimization
+- Touch input optimization:
+  - Drag and drop mechanics for cards
+  - Touch-friendly UI elements
+  - Gesture support for camera control
+- Variable screen resolution handling:
+  - Dynamic UI scaling
+  - Responsive layout design
+  - Safe area considerations for notches/cutouts
+- Mobile performance optimization:
+  - Battery usage consideration
+  - Memory management
+  - Unit count optimization
+- Mobile-specific features:
+  - Offline play capability
+  - Auto-save system
+  - Push notifications for energy/lives
 
 ## Initial Development Focus
 1. Set up basic grid system
@@ -168,4 +222,4 @@ A unique hybrid combining tower defense, roguelike elements, and deck-building m
 4. Establish core combat mechanics
 5. Develop basic card system
 
-This plan provides a framework for development while allowing for iteration and adjustment based on testing and feedback. Would you like to proceed with any specific phase or need clarification on any aspects?
+This plan provides a framework for development while allowing for iteration and adjustment based on testing and feedback.
