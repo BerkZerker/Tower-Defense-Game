@@ -87,3 +87,7 @@
 
 ## Last Updated
 2/18/2025
+
+
+## Human Notes
+- Use the repomix thingy to dump the godot docs into the context and then delete the godot docs folder, and update the memory
