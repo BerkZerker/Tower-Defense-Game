@@ -130,6 +130,16 @@ Used for:
 - Player inputs
 - Game commands
 
+## Development Resources
+
+### API Documentation
+- Local Godot API documentation in `godot-docs-html-stable/`
+- Use for accurate implementation of:
+  - Node types and inheritance
+  - Built-in signals
+  - Method signatures
+  - Property types
+
 ## Data Flow
 
 ### Combat Flow

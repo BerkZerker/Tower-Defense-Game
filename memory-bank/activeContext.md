@@ -36,12 +36,14 @@ Phase 1: Core Mechanics Implementation
    - Component-based architecture for units
    - Singleton pattern for core managers
    - Scene-based UI system
+   - Local Godot API documentation integration for reference
 
 2. Development Approach
    - Focusing on core mechanics first
    - Implementing features iteratively
    - Mobile-first development mindset
    - Performance considerations from start
+   - Using local API docs for accurate implementation
 
 ### Design Decisions
 1. Grid System
@@ -81,10 +83,10 @@ Phase 1: Core Mechanics Implementation
 ## Next Steps
 
 ### Immediate Tasks
-1. Complete grid system foundation
-2. Implement basic unit placement
-3. Set up simple enemy spawning
-4. Establish basic combat mechanics
+1. Complete grid system foundation using TileMap
+2. Implement basic unit placement with CharacterBody2D
+3. Set up simple enemy spawning system
+4. Establish basic combat mechanics using Area2D
 
 ### Short-term Goals
 1. Functional prototype of core gameplay
@@ -117,9 +119,11 @@ Phase 1: Core Mechanics Implementation
 - Basic directory structure
 - Core system planning
 - Development environment configuration
+- Added local Godot API documentation
 
 ## Current Testing Focus
 1. Grid system functionality
 2. Unit placement mechanics
 3. Basic movement systems
 4. Touch input responsiveness
+5. API implementation accuracy

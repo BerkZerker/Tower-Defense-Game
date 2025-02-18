@@ -2,7 +2,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkcx1"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node2D"]
 
 [node name="GridManager" type="Node2D" parent="."]
 

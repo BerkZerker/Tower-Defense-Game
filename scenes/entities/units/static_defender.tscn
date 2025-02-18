@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://csl7pyagonvhm"]
+
+[ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_ueoif"]
+
+[node name="StaticDefender" instance=ExtResource("1_ueoif")]

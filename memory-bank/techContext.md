@@ -7,6 +7,7 @@
 - GDScript as primary scripting language
 - Built-in physics and collision system
 - Scene-based architecture
+- Local Godot API documentation available in `godot-docs-html-stable/`
 
 ### Project Structure
 ```
@@ -17,7 +18,8 @@ tower-defense-game/
 ├── autoload/     # Singleton managers
 ├── resources/    # Game data
 ├── ui/          # UI elements
-└── assets/      # Game assets
+├── assets/      # Game assets
+└── godot-docs-html-stable/  # Local Godot API documentation
 ```
 
 ### Version Control
@@ -127,6 +129,7 @@ tower-defense-game/
 - Git
 - Text editor with GDScript support
 - Mobile device testing setup
+- Local Godot API documentation (included in project)
 
 ### Development Workflow
 1. Local Development
@@ -134,6 +137,7 @@ tower-defense-game/
    - Script implementation
    - Component development
    - Local testing
+   - API reference consultation
 
 2. Testing Process
    - Unit testing (where applicable)
