@@ -9,6 +9,17 @@
 - [x] Development environment setup
 - [x] Documentation initialization
 - [x] Memory bank setup
+- [x] Asset pipeline setup and organization
+
+### Phase 1: Core Mechanics
+- [x] Unit Scene Setup
+  - [x] Base unit template
+  - [x] Static defender scene
+  - [x] Mobile unit scene
+  - [x] Support unit scene
+  - [x] Basic enemy scene
+  - [x] Elite enemy scene
+  - [x] Boss enemy scene
 
 ## In Progress
 
@@ -21,13 +32,13 @@
   - [ ] Pathfinding foundation
 
 - [ ] Unit Placement
-  - [ ] Basic unit scenes
+  - [x] Basic unit scenes
   - [ ] Placement mechanics
   - [ ] Position snapping
   - [ ] Validation feedback
 
 - [ ] Enemy System
-  - [ ] Basic enemy types
+  - [x] Basic enemy types
   - [ ] Spawn system
   - [ ] Movement patterns
   - [ ] Simple AI
@@ -54,15 +65,15 @@
   - [ ] Card actions
 
 ### Phase 3: Unit Development
-- [ ] Extended Unit Types
-  - [ ] Static defenders
-  - [ ] Mobile units
-  - [ ] Support units
+- [x] Extended Unit Types
+  - [x] Static defenders
+  - [x] Mobile units
+  - [x] Support units
 
-- [ ] Enemy Variety
-  - [ ] Multiple enemy types
-  - [ ] Advanced behaviors
-  - [ ] Special abilities
+- [x] Enemy Variety
+  - [x] Multiple enemy types
+  - [x] Advanced behaviors
+  - [x] Special abilities
 
 ### Phase 4: Roguelike Elements
 - [ ] Run Structure
@@ -89,7 +100,7 @@
 ## Known Issues
 
 ### Technical Issues
-1. None documented yet (early development)
+1. None currently (scene loading issues resolved)
 
 ### Design Issues
 1. None documented yet (early development)
@@ -98,7 +109,7 @@
 
 ### High Priority
 1. Complete grid system foundation
-2. Implement basic unit placement
+2. Implement unit placement mechanics
 3. Set up enemy spawning
 4. Establish combat basics
 
@@ -109,23 +120,22 @@
 4. Initialize save system
 
 ### Low Priority
-1. Asset pipeline setup
-2. Sound system design
-3. Effect system planning
-4. Performance optimization
+1. Sound system design
+2. Effect system planning
+3. Performance optimization
 
 ## Milestones
 
 ### Milestone 1: Playable Prototype
 - [ ] Functional grid system
-- [ ] Basic unit placement
+- [x] Basic unit scene setup
 - [ ] Simple enemy waves
 - [ ] Combat functionality
 
 ### Milestone 2: Core Systems
 - [ ] Card system working
-- [ ] Multiple unit types
-- [ ] Enemy variety
+- [x] Multiple unit types
+- [x] Enemy variety
 - [ ] Resource management
 
 ### Milestone 3: Roguelike Features

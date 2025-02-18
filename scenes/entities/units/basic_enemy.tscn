@@ -1,5 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdfbisfe7xmwx"]
+[gd_scene load_steps=4 format=3 uid="uid://cdfbisfe7xmwx"]
 
 [ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_bmbjm"]
+[ext_resource type="Texture2D" uid="uid://bnxh3o4yt6u8m" path="res://itch io assets/Enemies/spr_normal_slime.png" id="2_klxew"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
+radius = 100.0
 
 [node name="BasicEnemy" instance=ExtResource("1_bmbjm")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_klxew")
+
+[node name="HealthComponent" parent="." index="2"]
+maxHealth = 50.0
+
+[node name="CombatComponent" parent="." index="3"]
+attackRange = 25.0
+attackSpeed = 0.5
+baseDamage = 5.0
+
+[node name="MovementComponent" type="Node" parent="." index="6"]
+speed = 100.0
+pathUpdateInterval = 0.5
+
+[node name="DetectionArea" type="Area2D" parent="." index="7"]
+
+[node name="DetectionShape" type="CollisionShape2D" parent="DetectionArea" index="0"]
+shape = SubResource("CircleShape2D_detect")

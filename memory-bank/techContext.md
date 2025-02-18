@@ -19,6 +19,18 @@ tower-defense-game/
 ├── resources/    # Game data
 ├── ui/          # UI elements
 ├── assets/      # Game assets
+│   ├── audio/   # Sound effects and music
+│   └── textures/ # Visual assets
+│       ├── enemies/            # Enemy unit textures
+│       ├── environment/        # Environment assets
+│       │   ├── decoration/     # Trees, rocks, mushrooms
+│       │   ├── grass/         # Grass variations
+│       │   └── tile_set/      # Ground and stone tiles
+│       └── towers/            # Tower assets
+│           ├── castle/        # Castle variations
+│           ├── combat/        # Combat towers
+│           ├── combat_projectiles/ # Tower projectiles
+│           └── non_combat/    # Non-combat towers
 └── godot-docs-html-stable/  # Local Godot API documentation
 ```
 
