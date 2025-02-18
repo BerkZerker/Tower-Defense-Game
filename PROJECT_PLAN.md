@@ -165,9 +165,9 @@ A mobile-focused tower defense game combining roguelike elements and deck-buildi
 ## Asset Requirements
 
 ### Visual Assets
-- Character sprites
-- Enemy sprites
-- Tower sprites
+- Character textures
+- Enemy textures
+- Tower textures
 - Card artwork
 - UI elements
 - Effect animations

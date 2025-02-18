@@ -37,16 +37,16 @@
   - [ ] Card costs
   - [ ] Resource generation
 
-### Phase 3: Unit Development (PLANNED)
-- [ ] Character Types
-  - [ ] Static defenders
-  - [ ] Mobile units
-  - [ ] Support units
+### Phase 3: Unit Development (IN PROGRESS)
+- [x] Character Types
+  - [x] Static defenders
+  - [x] Mobile units
+  - [x] Support units
 
-- [ ] Enemy Types
-  - [ ] Basic enemy variants
-  - [ ] Advanced enemy behaviors
-  - [ ] Boss units
+- [x] Enemy Types
+  - [x] Basic enemy variants
+  - [x] Advanced enemy behaviors
+  - [x] Boss units
 
 ### Phase 4: Roguelike Elements (PLANNED)
 - [ ] Run Structure
@@ -74,14 +74,20 @@
 - [x] Initial project structure
 - [x] Directory organization
 - [x] Documentation setup
-- [ ] Basic scene templates
+- [x] Basic scene templates
 - [ ] Core manager scripts
 
 ## Development Notes
 - Current priority is Phase 1: Core Mechanics
+- Unit scenes completed with component structure
+- Next focus: Unit placement and combat mechanics
 - Following mobile-first development approach
 - Follow CONTRIBUTING.md guidelines for consistency
 - Each feature should be documented in its directory's README.md
 
 ## Last Updated
-2/15/2025
+2/18/2025
+
+
+## Human Notes
+- Use the repomix thingy to dump the godot docs into the context and then delete the godot docs folder, and update the memory

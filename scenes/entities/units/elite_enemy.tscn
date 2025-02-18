@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8j8y8ms2rnmx"]
+
+[ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_k3p4m"]
+[ext_resource type="Texture2D" uid="uid://dtjgxq2kyl4wq" path="res://itch io assets/Enemies/spr_big_slime.png" id="2_vhn3p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_splash"]
+radius = 50.0
+
+[node name="EliteEnemy" instance=ExtResource("1_k3p4m")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_vhn3p")
+scale = Vector2(1.2, 1.2)
+
+[node name="HealthComponent" parent="." index="2"]
+maxHealth = 150.0
+armor = 2.0
+
+[node name="CombatComponent" parent="." index="3"]
+attackRange = 35.0
+attackSpeed = 0.8
+baseDamage = 15.0
+
+[node name="MovementComponent" type="Node" parent="." index="6"]
+speed = 80.0
+pathUpdateInterval = 0.5
+
+[node name="AbilityComponent" type="Node" parent="." index="7"]
+splashRange = 50.0
+splashDamage = 5.0
+
+[node name="DetectionArea" type="Area2D" parent="." index="8"]
+
+[node name="DetectionShape" type="CollisionShape2D" parent="DetectionArea" index="0"]
+shape = SubResource("CircleShape2D_detect")
+
+[node name="SplashArea" type="Area2D" parent="." index="9"]
+
+[node name="SplashShape" type="CollisionShape2D" parent="SplashArea" index="0"]
+shape = SubResource("CircleShape2D_splash")

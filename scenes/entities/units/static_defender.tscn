@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://csl7pyagonvhm"]
+
+[ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_ueoif"]
+[ext_resource type="Texture2D" uid="uid://b6orykm1xuup1" path="res://itch io assets/Towers/Combat Towers/spr_tower_archer.png" id="2_m2efy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_range"]
+radius = 150.0
+
+[node name="StaticDefender" instance=ExtResource("1_ueoif")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_m2efy")
+
+[node name="CombatComponent" parent="." index="3"]
+attackRange = 150.0
+attackSpeed = 1.0
+baseDamage = 10.0
+
+[node name="RangeArea" type="Area2D" parent="." index="6"]
+
+[node name="RangeShape" type="CollisionShape2D" parent="RangeArea" index="0"]
+shape = SubResource("CircleShape2D_range")

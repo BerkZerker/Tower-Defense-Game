@@ -30,7 +30,7 @@ tower-defense-game/
 │   ├── card_hand/  # Card UI elements
 │   └── hud/        # Game HUD elements
 └── assets/      # Game assets
-    ├── sprites/  # Images and sprite files
+    ├── textures/  # Images and texture files
     └── audio/    # Sound effects and music
 ```
 
@@ -65,8 +65,9 @@ tower-defense-game/
 Currently in early development. Following the implementation phases:
 
 1. Core Mechanics (In Progress)
-   - Grid system
-   - Basic unit placement
+   - Grid system (In Progress)
+   - ✓ Unit scenes completed (All types implemented)
+   - Basic unit placement (Next Focus)
    - Simple enemy spawning
    - Basic combat system
 
