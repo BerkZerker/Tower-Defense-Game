@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1vfa78oy0ou3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkcx1"]
+
+[node name="Game" type="Node"]
+
+[node name="GridManager" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="GridManager"]
+
+[node name="PlacementIndicator" type="Sprite2D" parent="GridManager"]
+
+[node name="UnitManager" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="UnitManager"]
+
+[node name="Enemies" type="Node2D" parent="UnitManager"]
+
+[node name="Projectiles" type="Node2D" parent="UnitManager"]
+
+[node name="MainTower" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="MainTower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainTower"]
+shape = SubResource("RectangleShape2D_dkcx1")
+
+[node name="HealthComponent" type="Node" parent="MainTower"]
+
+[node name="WaveManager" type="Node" parent="."]
+
+[node name="SpawnPoints" type="Node2D" parent="WaveManager"]
