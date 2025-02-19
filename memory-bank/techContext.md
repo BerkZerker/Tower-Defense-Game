@@ -15,6 +15,20 @@
   * Touch input handling
   * Relevant tutorials only
 
+### Running the Game
+- Steam installation path: `C:\Program Files (x86)\Steam\steamapps\common\Godot Engine`
+- Executable: `godot.windows.opt.tools.64.exe`
+- Two ways to run the game:
+  1. Open in editor (for development):
+     ```
+     "C:\Program Files (x86)\Steam\steamapps\common\Godot Engine\godot.windows.opt.tools.64.exe" --path . --verbose
+     ```
+  2. Run game directly (for playing):
+     ```
+     "C:\Program Files (x86)\Steam\steamapps\common\Godot Engine\godot.windows.opt.tools.64.exe" scenes/game.tscn
+     ```
+- Note: When running the game directly, it will open in play mode. The window may close if there are errors in the scene setup.
+
 ### Project Structure
 ```
 tower-defense-game/
@@ -52,8 +66,9 @@ tower-defense-game/
    - Android (API level TBD)
    - iOS (minimum version TBD)
 2. Orientation
-   - Portrait mode only
-   - Safe area handling for notches
+   - Landscape mode only (16:9)
+   - Base resolution: 1280x720
+   - Safe area handling
 
 ### Performance Targets
 1. Frame Rate
@@ -69,13 +84,15 @@ tower-defense-game/
 
 ### Device Compatibility
 1. Screen Sizes
-   - Minimum: 320x480
-   - Maximum: 1440x2960
+   - Minimum: 1280x720
+   - Maximum: 2560x1440
    - Dynamic UI scaling
+   - Landscape-optimized layouts
 2. Input
    - Touch primary
    - Gesture support
    - Drag-and-drop optimization
+   - Landscape-oriented controls
 
 ## Dependencies
 
@@ -83,7 +100,7 @@ tower-defense-game/
 1. Godot Built-in
    - Node2D for game objects
    - CanvasLayer for UI
-   - TileMap for grid
+   - TileMap for grid (16x9 cells)
    - CharacterBody2D for units
    - AnimationPlayer for animations
 
@@ -122,6 +139,7 @@ tower-defense-game/
    - Input buffering
    - Multi-touch support
    - Gesture recognition
+   - Landscape-optimized controls
 
 ### Performance Optimization
 1. Rendering
@@ -162,6 +180,7 @@ tower-defense-game/
    - Scene testing
    - Integration testing
    - Mobile device testing
+   - Landscape orientation verification
 
 3. Build Process
    - Export templates
@@ -175,6 +194,7 @@ tower-defense-game/
 - Debug builds
 - Release builds
 - Platform-specific settings
+- Landscape orientation settings
 
 ### Resource Management
 - Asset loading strategies

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://goblin"]
+
+[ext_resource type="PackedScene" uid="uid://base_enemy_template" path="res://scenes/entities/base_enemy.tscn" id="1_base"]
+[ext_resource type="Texture2D" uid="uid://goblin_texture" path="res://assets/textures/enemies/spr_goblin.png" id="2_sprite"]
+[ext_resource type="Script" path="res://scripts/entities/enemies/goblin.gd" id="3_script"]
+
+[node name="Goblin" instance=ExtResource("1_base")]
+script = ExtResource("3_script")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_sprite")

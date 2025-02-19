@@ -24,11 +24,11 @@
 ## In Progress
 
 ### Phase 1: Core Mechanics
-- [ ] Grid System
-  - [ ] Basic grid layout
-  - [ ] Coordinate system
-  - [ ] Placement validation
-  - [ ] Visual indicators
+- [x] Grid System
+  - [x] Basic grid layout
+  - [x] Coordinate system
+  - [x] Placement validation
+  - [x] Visual indicators
   - [ ] Pathfinding foundation
 
 - [ ] Unit Placement
@@ -37,11 +37,16 @@
   - [ ] Position snapping
   - [ ] Validation feedback
 
-- [ ] Enemy System
+- [x] Enemy System Base
   - [x] Basic enemy types
-  - [ ] Spawn system
-  - [ ] Movement patterns
-  - [ ] Simple AI
+  - [x] Component-based architecture
+    - [x] Health component
+    - [x] Movement component
+    - [x] Combat component
+  - [x] Base enemy template
+  - [x] Normal slime implementation
+  - [x] Spawn system and points
+  - [ ] Movement patterns and AI
 
 - [ ] Combat System
   - [ ] Attack mechanics

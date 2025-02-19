@@ -11,11 +11,6 @@ radius = 150.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_m2efy")
 
-[node name="CombatComponent" parent="." index="3"]
-attackRange = 150.0
-attackSpeed = 1.0
-baseDamage = 10.0
-
 [node name="RangeArea" type="Area2D" parent="." index="6"]
 
 [node name="RangeShape" type="CollisionShape2D" parent="RangeArea" index="0"]

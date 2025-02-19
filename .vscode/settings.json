@@ -1,0 +1,8 @@
+{
+    "godot_tools.editor_path": "godot",
+    "godot_tools.scene_file_config": "project.godot",
+    "godot_tools.gdscript_lsp_server_port": 6005,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
+}

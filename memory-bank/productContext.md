@@ -15,7 +15,7 @@ To create an engaging mobile tower defense game that stands out by blending trad
    - Deck building adds strategic customization
 
 3. **Touch Optimization**
-   - Designed specifically for portrait orientation
+   - Designed specifically for landscape orientation
    - Intuitive drag-and-drop card mechanics
    - Clear visual feedback for all actions
 
@@ -73,7 +73,7 @@ To create an engaging mobile tower defense game that stands out by blending trad
 - Skill development
 
 ### Mobile Optimization
-- One-handed play
+- Two-handed landscape play
 - Clear visual feedback
 - Quick session options
 - Offline functionality

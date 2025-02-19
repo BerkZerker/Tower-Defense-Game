@@ -1,14 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1vfa78oy0ou3"]
+[gd_scene load_steps=5 format=3 uid="uid://d1vfa78oy0ou3"]
+
+[ext_resource type="Script" path="res://scripts/placement_indicator.gd" id="1_y4k3p"]
+[ext_resource type="Script" path="res://scripts/input_handler.gd" id="2_u8k7p"]
+[ext_resource type="Script" path="res://scripts/wave_manager.gd" id="5_wave"]
+[ext_resource type="TileSet" path="res://resources/grid_tileset.tres" id="4_grid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkcx1"]
+size = Vector2(64, 64)
 
 [node name="Game" type="Node2D"]
 
+[node name="InputHandler" type="Node" parent="."]
+script = ExtResource("2_u8k7p")
+
 [node name="GridManager" type="Node2D" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="GridManager"]
+[node name="TileMap" type="TileMap" parent="GridManager"]
+tile_set = ExtResource("4_grid")
+format = 2
+layer_0/name = "Ground"
 
 [node name="PlacementIndicator" type="Sprite2D" parent="GridManager"]
+script = ExtResource("1_y4k3p")
 
 [node name="UnitManager" type="Node2D" parent="."]
 
@@ -28,5 +41,18 @@ shape = SubResource("RectangleShape2D_dkcx1")
 [node name="HealthComponent" type="Node" parent="MainTower"]
 
 [node name="WaveManager" type="Node" parent="."]
+script = ExtResource("5_wave")
 
 [node name="SpawnPoints" type="Node2D" parent="WaveManager"]
+
+[node name="Spawn1" type="Marker2D" parent="WaveManager/SpawnPoints"]
+position = Vector2(-32, 180)
+
+[node name="Spawn2" type="Marker2D" parent="WaveManager/SpawnPoints"]
+position = Vector2(1312, 180)
+
+[node name="Spawn3" type="Marker2D" parent="WaveManager/SpawnPoints"]
+position = Vector2(1312, 540)
+
+[node name="Spawn4" type="Marker2D" parent="WaveManager/SpawnPoints"]
+position = Vector2(-32, 540)
