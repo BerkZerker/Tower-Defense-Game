@@ -138,6 +138,8 @@ Phase 1: Core Mechanics Implementation
 - [x] Implemented proper shape resource declarations
 - [x] Set up component structure for all units
 - [x] Configured unit-specific abilities and stats
+  * Configured unit-specific abilities and stats
+- [x] Created human_todo.md file with scene setup instructions
 
 ## Current Testing Focus
 1. Grid system functionality in landscape orientation

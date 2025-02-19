@@ -33,7 +33,15 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   Create animations for the unit (e.g., idle, attack, move).
     *   Add the animations to the AnimationPlayer node.
 
-### 3. ui_overlay.tscn
+### 3. Individual Unit Scenes (static_defender.tscn, mobile_unit.tscn, support_unit.tscn, basic_enemy.tscn, elite_enemy.tscn, boss_enemy.tscn)
+
+*   **Inherit from base_unit.tscn:** Ensure each unit scene inherits from `base_unit.tscn`.
+*   **Sprite2D:** Assign a unique texture to the Sprite2D node for each unit type.
+*   **CollisionShape2D:** Adjust the shape and size of the CollisionShape2D to accurately match the unit's sprite.
+*   **Unique Components:** Add any additional components specific to the unit type (e.g., a ranged attack component for a static defender).
+*   **Animations:** Create and add animations specific to the unit type (e.g., a special attack animation for a boss enemy).
+
+### 4. ui_overlay.tscn
 
 *   **HUD:**
     *   Add child nodes for displaying tower health, wave information, and resources. These could be Labels, TextureProgress, or other UI elements.
@@ -47,7 +55,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   Configure the layout and appearance of these UI elements.
     *   Implement the functionality for the buttons (e.g., connect signals to functions).
 
-### 4. card_hand.tscn
+### 5. card_hand.tscn
 
 *   **HandArea:**
     *   Instantiate card scenes (unit\_card.tscn, spell\_card.tscn) and add them as children to the CardContainer (HBoxContainer).
@@ -58,7 +66,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   Add UI elements (e.g., Labels, icons) to display the player's resources (e.g., mana, gold).
     *   Implement logic to update the resource display when resources change.
 
-### 5. main_menu.tscn
+### 6. main_menu.tscn
 
 *   **Background:**
     *   Assign a texture to the TextureRect node to serve as the background image.
@@ -68,7 +76,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
 *   **ButtonContainer:**
     *   Connect the button signals (pressed) to the appropriate functions in a script to handle button clicks (e.g., start game, options, quit).
 
-### 6. base_card.tscn
+### 7. base_card.tscn
 
 *   **Background:**
     *   Assign a texture to the TextureRect node to serve as the card's background.
@@ -81,7 +89,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
 *   **EffectContainer:**
     *   Add UI elements or visual representations of the card's effects.
 
-### 7. spell_card.tscn
+### 8. spell_card.tscn
 
 *   **Content:**
     *   **SpellStats:**
@@ -92,7 +100,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
 *   **SpellEffects:**
     *   Add visual effects (e.g., particles, animations) to represent the spell's effects.
 
-### 8. unit_card.tscn
+### 9. unit_card.tscn
 
 *   **Content:**
     *   **UnitStats:**

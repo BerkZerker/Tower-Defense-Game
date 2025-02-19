@@ -20,6 +20,7 @@
   - [x] Basic enemy scene
   - [x] Elite enemy scene
   - [x] Boss enemy scene
+- [x] Created human_todo.md file
 
 ## In Progress
 
