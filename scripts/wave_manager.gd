@@ -6,6 +6,7 @@ signal enemy_spawned(enemy: Node2D)
 
 var current_wave: int = 0
 var enemies_remaining: int = 0
+var enemies_node: Node = null
 var wave_in_progress: bool = false
 
 # Wave configuration
@@ -39,17 +40,17 @@ var enemy_scenes = {
 
 func _ready() -> void:
 	# Initialize any needed setup
-	pass
+	enemies_node = get_node("../UnitManager/Enemies")
 
 func start_wave() -> void:
 	if wave_in_progress:
 		return
-		
+	
 	current_wave += 1
 	if current_wave > waves.size():
 		print("All waves completed!")
 		return
-		
+	
 	wave_in_progress = true
 	var wave_data = waves[current_wave - 1]
 	
@@ -61,6 +62,7 @@ func _spawn_wave(wave_data: Dictionary) -> void:
 		for i in range(enemy_data["count"]):
 			await get_tree().create_timer(enemy_data["delay"]).timeout
 			_spawn_enemy(enemy_data["type"])
+			enemies_remaining += 1
 	
 	# Wait for all enemies to be defeated
 	await get_tree().create_timer(wave_data["spawn_delay"]).timeout
@@ -70,16 +72,15 @@ func _spawn_enemy(enemy_type: String) -> void:
 	if not enemy_scenes.has(enemy_type):
 		push_error("Enemy type not found: " + enemy_type)
 		return
-		
+	
 	var spawn_point = _get_random_spawn_point()
 	if not spawn_point:
 		push_error("No spawn points available")
 		return
-		
+	
 	var enemy = enemy_scenes[enemy_type].instantiate()
 	enemy.position = spawn_point.position
-	get_node("../UnitManager/Enemies").add_child(enemy)
-	enemies_remaining += 1
+	$enemies_node.add_child(enemy)
 	
 	# Connect to enemy death signal
 	if enemy.has_signal("defeated"):

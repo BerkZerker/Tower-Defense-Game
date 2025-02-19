@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1vfa78oy0ou3"]
+[gd_scene load_steps=6 format=3 uid="uid://d1vfa78oy0ou3"]
 
 [ext_resource type="Script" path="res://scripts/placement_indicator.gd" id="1_y4k3p"]
 [ext_resource type="Script" path="res://scripts/input_handler.gd" id="2_u8k7p"]
-[ext_resource type="Script" path="res://scripts/wave_manager.gd" id="5_wave"]
-[ext_resource type="TileSet" path="res://resources/grid_tileset.tres" id="4_grid"]
+[ext_resource type="Script" path="res://scripts/wave_manager.gd" id="3_xghd2"]
+
+[sub_resource type="TileSet" id="TileSet_7idrx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkcx1"]
 size = Vector2(64, 64)
@@ -15,10 +16,8 @@ script = ExtResource("2_u8k7p")
 
 [node name="GridManager" type="Node2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="GridManager"]
-tile_set = ExtResource("4_grid")
-format = 2
-layer_0/name = "Ground"
+[node name="TileMapLayer" type="TileMapLayer" parent="GridManager"]
+tile_set = SubResource("TileSet_7idrx")
 
 [node name="PlacementIndicator" type="Sprite2D" parent="GridManager"]
 script = ExtResource("1_y4k3p")
@@ -41,7 +40,7 @@ shape = SubResource("RectangleShape2D_dkcx1")
 [node name="HealthComponent" type="Node" parent="MainTower"]
 
 [node name="WaveManager" type="Node" parent="."]
-script = ExtResource("5_wave")
+script = ExtResource("3_xghd2")
 
 [node name="SpawnPoints" type="Node2D" parent="WaveManager"]
 

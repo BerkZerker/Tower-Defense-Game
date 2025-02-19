@@ -10,7 +10,6 @@ Phase 1: Core Mechanics Implementation
    - [x] Unit placement validation (Grid position checking)
    - [x] Visual placement indicators (Placement indicator with feedback)
    - [ ] Grid-based pathfinding implementation
-   - [x] Grid system landscape adaptation (16x9 grid)
 
 2. Unit System Foundation
    - [x] Basic unit scenes completed
@@ -99,7 +98,7 @@ Phase 1: Core Mechanics Implementation
 
 ### Immediate Tasks
 1. Implement unit placement mechanics
-2. Set up enemy spawning system
+2. Set up enemy movement patterns and AI
 3. Create combat interaction system
 4. Add basic pathfinding
 

@@ -37,7 +37,7 @@
   - [ ] Position snapping
   - [ ] Validation feedback
 
-- [x] Enemy System Base
+- [ ] Enemy System Base
   - [x] Basic enemy types
   - [x] Component-based architecture
     - [x] Health component
@@ -113,10 +113,10 @@
 ## Next Steps Priority
 
 ### High Priority
-1. Complete grid system foundation
-2. Implement unit placement mechanics
-3. Set up enemy spawning
-4. Establish combat basics
+1. Implement unit placement mechanics
+2. Set up enemy movement patterns and AI
+3. Create combat interaction system
+4. Add basic pathfinding
 
 ### Medium Priority
 1. Plan card system architecture

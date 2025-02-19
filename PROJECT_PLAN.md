@@ -132,7 +132,7 @@ A mobile-focused tower defense game combining roguelike elements and deck-buildi
 
 ## Implementation Phases
 
-### Phase 1: Core Mechanics
+### Phase 1: Core Mechanics (IN PROGRESS)
 1. Grid system implementation
 2. Basic unit placement
 3. Simple enemy spawning
@@ -144,7 +144,7 @@ A mobile-focused tower defense game combining roguelike elements and deck-buildi
 3. Basic character and spell cards
 4. Resource system
 
-### Phase 3: Unit Development
+### Phase 3: Unit Development (COMPLETE)
 1. Multiple character types
 2. Enemy variety
 3. Advanced combat mechanics
@@ -220,6 +220,5 @@ A mobile-focused tower defense game combining roguelike elements and deck-buildi
 2. Implement simple unit placement
 3. Create basic enemy spawning
 4. Establish core combat mechanics
-5. Develop basic card system
 
 This plan provides a framework for development while allowing for iteration and adjustment based on testing and feedback.

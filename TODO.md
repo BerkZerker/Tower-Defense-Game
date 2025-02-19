@@ -37,7 +37,7 @@
   - [ ] Card costs
   - [ ] Resource generation
 
-### Phase 3: Unit Development (IN PROGRESS)
+### Phase 3: Unit Development (COMPLETE)
 - [x] Character Types
   - [x] Static defenders
   - [x] Mobile units
@@ -86,8 +86,4 @@
 - Each feature should be documented in its directory's README.md
 
 ## Last Updated
-2/18/2025
-
-
-## Human Notes
-- Use the repomix thingy to dump the godot docs into the context and then delete the godot docs folder, and update the memory
+2/19/2025
