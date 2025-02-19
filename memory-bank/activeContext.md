@@ -34,19 +34,21 @@ Phase 1: Core Mechanics Implementation
 
 ### Technical Decisions
 1. Project Structure
+   - Optimized repository structure
+   - Removed unnecessary directories and files
    - Organized into clear directories (scenes, scripts, components, etc.)
    - Component-based architecture for units
    - Singleton pattern for core managers
    - Scene-based UI system
-   - Local Godot API documentation integration for reference
-   - Assets organized in specific texture directories for clarity
+   - Optimized local Godot API documentation
+   - Streamlined asset organization
 
 2. Development Approach
    - Focusing on core mechanics first
    - Implementing features iteratively
    - Mobile-first development mindset
    - Performance considerations from start
-   - Using local API docs for accurate implementation
+   - Using streamlined API docs for efficient reference
 
 ### Design Decisions
 1. Unit System
@@ -105,8 +107,19 @@ Phase 1: Core Mechanics Implementation
 4. Save system implementation
 
 ## Recent Changes
-- [x] Organized game textures into structured directories (enemies, environment, towers)
-- [x] Restructured assets to use textures instead of sprites for clarity
+- [x] Project structure optimization
+  * Removed unnecessary directories
+  * Cleaned up asset organization
+  * Streamlined documentation
+- [x] Documentation improvements
+  * Optimized local Godot documentation to include only relevant content
+  * Cleaned up documentation structure for better reference
+  * Removed redundant or unused documentation sections
+- [x] Repository cleanup
+  * Organized project files more efficiently
+  * Improved directory structure clarity
+  * Removed unnecessary files
+- [x] Organized game textures into structured directories
 - [x] Completed all unit scene templates
 - [x] Fixed scene loading errors
 - [x] Implemented proper shape resource declarations

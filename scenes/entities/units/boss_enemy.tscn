@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh4u5q5pfj1gb"]
 
 [ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_r5p8m"]
-[ext_resource type="Texture2D" uid="uid://bk0q4areqxnmx" path="res://itch io assets/Enemies/spr_king_slime.png" id="2_8kdxp"]
+[ext_resource type="Texture2D" uid="uid://bk0q4areqxnmx" path="res://assets/textures/enemies/spr_king_slime.png" id="2_8kdxp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
 radius = 200.0

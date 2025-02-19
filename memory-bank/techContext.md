@@ -7,31 +7,37 @@
 - GDScript as primary scripting language
 - Built-in physics and collision system
 - Scene-based architecture
-- Local Godot API documentation available in `godot-docs-html-stable/`
+- Optimized local Godot API documentation in `godot-docs-html-stable/`
+  * Focused 2D game development documentation
+  * Mobile-specific functionality
+  * Essential class references
+  * Performance optimization guides
+  * Touch input handling
+  * Relevant tutorials only
 
 ### Project Structure
 ```
 tower-defense-game/
-├── scenes/       # Game scenes and levels
-├── scripts/      # GDScript source files
-├── components/   # Reusable components
-├── autoload/     # Singleton managers
-├── resources/    # Game data
-├── ui/          # UI elements
-├── assets/      # Game assets
-│   ├── audio/   # Sound effects and music
-│   └── textures/ # Visual assets
-│       ├── enemies/            # Enemy unit textures
-│       ├── environment/        # Environment assets
-│       │   ├── decoration/     # Trees, rocks, mushrooms
-│       │   ├── grass/         # Grass variations
-│       │   └── tile_set/      # Ground and stone tiles
-│       └── towers/            # Tower assets
-│           ├── castle/        # Castle variations
-│           ├── combat/        # Combat towers
-│           ├── combat_projectiles/ # Tower projectiles
-│           └── non_combat/    # Non-combat towers
-└── godot-docs-html-stable/  # Local Godot API documentation
+├── .git/               # Git repository data
+├── .godot/            # Godot engine cache and settings
+├── .repomix/          # Repository mixins
+├── assets/            # Game assets
+│   ├── audio/         # Sound effects and music
+│   └── textures/      # Visual assets
+│       ├── enemies/   # Enemy unit textures
+│       ├── environment/
+│       └── towers/    # Tower assets
+├── autoload/          # Singleton managers
+├── components/        # Reusable components
+├── memory-bank/       # Project documentation
+├── resources/         # Game data
+├── scenes/           # Game scenes and levels
+├── scripts/          # GDScript source files
+├── ui/               # UI elements
+└── godot-docs-html-stable/  # Optimized local API documentation
+    ├── classes/      # Essential 2D and mobile-related classes
+    ├── tutorials/    # Relevant 2D and mobile tutorials
+    └── getting_started/ # Core concepts and setup guides
 ```
 
 ### Version Control
@@ -141,7 +147,7 @@ tower-defense-game/
 - Git
 - Text editor with GDScript support
 - Mobile device testing setup
-- Local Godot API documentation (included in project)
+- Optimized local API documentation (focused on 2D and mobile)
 
 ### Development Workflow
 1. Local Development

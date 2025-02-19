@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6q5mt3hey4bp"]
 
 [ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_w5r3p"]
-[ext_resource type="Texture2D" uid="uid://dj4kugx7f2p8v" path="res://itch io assets/Towers/Combat Towers/spr_tower_ice_wizard.png" id="2_t8u4k"]
+[ext_resource type="Texture2D" uid="uid://bx1wdxjodcxl3" path="res://assets/textures/towers/combat/spr_tower_ice_wizard.png" id="2_t8u4k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_effect"]
 radius = 120.0
@@ -11,16 +11,7 @@ radius = 120.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_t8u4k")
 
-[node name="CombatComponent" parent="." index="3"]
-attackRange = 120.0
-attackSpeed = 0.8
-baseDamage = 5.0
-
 [node name="AbilityComponent" type="Node" parent="." index="6"]
-slowEffect = 0.5
-slowDuration = 3.0
-buffRange = 100.0
-allyBuffStrength = 0.2
 
 [node name="EffectArea" type="Area2D" parent="." index="7"]
 

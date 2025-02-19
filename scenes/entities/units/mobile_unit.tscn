@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4y6jypbr8wcx"]
 
 [ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_d3rm4"]
-[ext_resource type="Texture2D" uid="uid://c8g5o2n3mvjxy" path="res://itch io assets/Towers/Combat Towers/spr_tower_crossbow.png" id="2_p4k3l"]
+[ext_resource type="Texture2D" uid="uid://bp4db07kxfsdt" path="res://assets/textures/towers/combat/spr_tower_crossbow.png" id="2_p4k3l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_range"]
 radius = 100.0

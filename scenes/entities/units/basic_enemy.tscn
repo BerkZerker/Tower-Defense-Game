@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdfbisfe7xmwx"]
 
 [ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_bmbjm"]
-[ext_resource type="Texture2D" uid="uid://bnxh3o4yt6u8m" path="res://itch io assets/Enemies/spr_normal_slime.png" id="2_klxew"]
+[ext_resource type="Texture2D" uid="uid://bnxh3o4yt6u8m" path="res://assets/textures/enemies/spr_normal_slime.png" id="2_klxew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
 radius = 100.0
