@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c24ofmafhgyfs"]
 
 [node name="UnitCard" type="Control"]
 layout_mode = 3
@@ -102,4 +102,4 @@ grow_vertical = 2
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(100, 100)
-render_target_update_mode = 4
+render_target_update_mode = 0

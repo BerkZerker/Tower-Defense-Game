@@ -11,14 +11,7 @@ radius = 100.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_p4k3l")
 
-[node name="CombatComponent" parent="." index="3"]
-attackRange = 100.0
-attackSpeed = 1.5
-baseDamage = 15.0
-
 [node name="MovementComponent" type="Node" parent="." index="6"]
-speed = 150.0
-pathUpdateInterval = 0.2
 
 [node name="RangeArea" type="Area2D" parent="." index="7"]
 

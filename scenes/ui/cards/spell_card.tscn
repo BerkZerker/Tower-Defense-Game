@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cbkpqao43b3s8"]
 
 [node name="SpellCard" type="Control"]
 layout_mode = 3

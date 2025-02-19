@@ -2,14 +2,38 @@
 
 This file contains a detailed list of setup instructions for the scenes in the project. Anything that isn't code in a .gd script file should be done manually in the Godot editor.
 
+## General Editor Steps
+
+*   **Reload Scripts:** If you encounter "Could not find base class" errors after creating or renaming scripts, try manually reloading the scripts in the Godot editor. You can usually do this by going to "Project" -> "Reload Scripts" in the Godot editor menu.
+
+## Testing Card Dragging
+
+1.  **Ensure `ui_overlay.tscn` is instantiated in `game.tscn`**: Verify that you have instantiated the `scenes/ui_overlay.tscn` scene as a child of the `Game` node in `game.tscn` as instructed previously.
+2.  **Verify `CardHand` Path**: In `scripts/game.gd`, in the `_ready()` function, check if the path `$UIOverlay/CardHand` correctly references the `CardHand` node in your scene setup. Adjust the path if necessary.
+3.  **Instantiate Cards in CardHand**:
+    *   Open `scenes/ui/card_hand.tscn`.
+    *   In the `CardContainer` (HBoxContainer) node, instantiate a few instances of `scenes/ui/cards/unit_card.tscn` or `scenes/ui/cards/spell_card.tscn` as children. You can do this by dragging and dropping the card scene from the FileSystem dock into the `CardContainer`.
+4.  **Run `game.tscn`**: Run the `game.tscn` scene in the Godot editor.
+5.  **Test Card Dragging**:
+    *   Touch or click on a card in the card hand. The card should visually lift up (appear on top).
+    *   Drag the input (mouse or touch). The selected card should follow your input within the card hand area.
+    *   Release the input. The card should be "dropped" and return to its normal Z-index.
+    *   Check the console output for "Card selected: [Card Name]" and "Card dropped" messages when you interact with the cards.
+
 ## Scenes
 
 ### 1. game.tscn
 
+*   **Instantiate UI Overlay:**
+    *   Instantiate the `scenes/ui_overlay.tscn` scene as a child of the `Game` node in `game.tscn`. This will add the UI elements, including the `CardHand`, to the game scene.
 *   **TileMapLayer:**
     *   Create a TileSet resource.
     *   Add a TileMapLayer node as a child of GridManager.
     *   Assign the TileSet resource to the TileMapLayer's `tile_set` property.
+    *   **TileSet Setup:**
+        *   Open the TileSet resource in the TileSet editor.
+        *   Add a new custom data layer named `valid_placement` of type `bool`.
+        *   For each tile that should be a valid unit placement cell, set the `valid_placement` custom data to `true`. Leave it `false` or unset for invalid placement tiles.
     *   Create a tileset in the tileset editor.
 *   **MainTower:**
     *   Add a Sprite2D node as a child of MainTower.
@@ -64,7 +88,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   Add a visual representation of the deck (e.g., a TextureRect with a card stack texture).
 *   **ResourceDisplay:**
     *   Add UI elements (e.g., Labels, icons) to display the player's resources (e.g., mana, gold).
-    *   Implement logic to update the resource display when resources change.
+    *   Implement logic to update resource display when resources change.
 
 ### 6. main_menu.tscn
 

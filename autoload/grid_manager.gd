@@ -74,9 +74,18 @@ func grid_to_world(grid_pos: Vector2i) -> Vector2:
 	)
 
 func is_valid_cell(grid_pos: Vector2i) -> bool:
-	# Check if the given grid position is within bounds
-	return grid_pos.x >= 0 and grid_pos.x < grid_width and \
-		   grid_pos.y >= 0 and grid_pos.y < grid_height
+	# Check if the given grid position is within bounds and is a valid placement cell
+	if not (grid_pos.x >= 0 and grid_pos.x < grid_width and \
+		   grid_pos.y >= 0 and grid_pos.y < grid_height):
+		return false
+
+	# Check if the tile is a valid placement tile (using custom data layer)
+	var tile_data = tilemap.get_cell_tile_data(0, grid_pos) # Assuming tile layer 0
+	if tile_data:
+		if tile_data.get_custom_data_by_name("valid_placement") == true:
+			return true
+
+	return false
 
 func is_cell_occupied(grid_pos: Vector2i) -> bool:
 	# Check if a cell is already occupied

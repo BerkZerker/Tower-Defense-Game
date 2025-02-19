@@ -1,11 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bat"]
+[gd_scene load_steps=4 format=3 uid="uid://bat"]
 
-[ext_resource type="PackedScene" uid="uid://base_enemy_template" path="res://scenes/entities/base_enemy.tscn" id="1_base"]
-[ext_resource type="Texture2D" uid="uid://bat_texture" path="res://assets/textures/enemies/spr_bat.png" id="2_sprite"]
+[ext_resource type="PackedScene" uid="uid://c4o5ycjf6p4go" path="res://scenes/entities/base_enemy.tscn" id="1_base"]
+[ext_resource type="Texture2D" uid="uid://doma8m0vfnw62" path="res://assets/textures/enemies/spr_bat.png" id="2_sprite"]
 [ext_resource type="Script" path="res://scripts/entities/enemies/bat.gd" id="3_script"]
 
 [node name="Bat" instance=ExtResource("1_base")]
 script = ExtResource("3_script")
+bat_name = "Bat"
+bat_score = 150
+enemy_name = "Bat"
+score_value = 150
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_sprite")
+
+[node name="HealthComponent" parent="." index="2"]
+max_health = 35.0
+
+[node name="MovementComponent" parent="." index="3"]
+rotation_speed = 4.0
+
+[node name="CombatComponent" parent="." index="4"]
+damage = 8.0
+attack_range = 24.0
+attack_speed = 1.5

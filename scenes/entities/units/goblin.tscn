@@ -1,11 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://goblin"]
+[gd_scene load_steps=4 format=3 uid="uid://goblin"]
 
-[ext_resource type="PackedScene" uid="uid://base_enemy_template" path="res://scenes/entities/base_enemy.tscn" id="1_base"]
-[ext_resource type="Texture2D" uid="uid://goblin_texture" path="res://assets/textures/enemies/spr_goblin.png" id="2_sprite"]
+[ext_resource type="PackedScene" uid="uid://c4o5ycjf6p4go" path="res://scenes/entities/base_enemy.tscn" id="1_base"]
+[ext_resource type="Texture2D" uid="uid://b646k476ekmc6" path="res://assets/textures/enemies/spr_goblin.png" id="2_sprite"]
 [ext_resource type="Script" path="res://scripts/entities/enemies/goblin.gd" id="3_script"]
 
 [node name="Goblin" instance=ExtResource("1_base")]
 script = ExtResource("3_script")
+goblin_name = "Goblin"
+goblin_score = 200
+enemy_name = "Goblin"
+score_value = 200
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_sprite")
+
+[node name="HealthComponent" parent="." index="2"]
+max_health = 75.0
+
+[node name="MovementComponent" parent="." index="3"]
+speed = 85.0
+rotation_speed = 3.5
+
+[node name="CombatComponent" parent="." index="4"]
+damage = 12.0
+attack_range = 40.0
+attack_speed = 0.8

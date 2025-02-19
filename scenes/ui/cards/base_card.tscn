@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://b7fd0vgwyurjj"]
 
 [node name="BaseCard" type="Control"]
 layout_mode = 3
