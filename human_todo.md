@@ -6,10 +6,29 @@ This file contains a detailed list of setup instructions for the scenes in the p
 
 *   **Reload Scripts:** If you encounter "Could not find base class" errors after creating or renaming scripts, try manually reloading the scripts in the Godot editor. You can usually do this by going to "Project" -> "Reload Scripts" in the Godot editor menu.
 
+## Verifications
+
+### Scene Structure Verification in `game.tscn`
+1.  **Open `game.tscn`**: Open the `scenes/game.tscn` scene in the Godot editor.
+2.  **Verify UI Overlay Instantiation**: Ensure that `scenes/ui_overlay.tscn` is instantiated as a child of the `Game` node.
+3.  **Verify GridManager Structure**: 
+    *   Check for a `GridManager` node under `Game`.
+    *   Under `GridManager`, verify that `TileMap` and `PlacementIndicator` nodes exist as children.
+
+### Card Hand Path Verification
+1.  **Open `game.gd`**: In the Godot editor, open `scripts/game.gd`.
+2.  **Check `_ready()` Function**: Locate the `_ready()` function and verify the line: `card_hand = $UIOverlay/CardHand`.
+3.  **Verify Path**: Ensure that `$UIOverlay/CardHand` correctly points to the `CardHand` node in your scene structure. Adjust the path in the script if it does not match your scene setup.
+
+### Card Script Methods Verification
+1. **Check `BaseCard.gd`**: Open `scripts/ui/cards/BaseCard.gd`.
+2. **Verify `is_card()` Method**: Ensure the `is_card()` method exists and returns `true`.
+3. **Verify `get_card_rect()` Method**: Ensure the `get_card_rect()` method exists and returns `Rect2(Vector2(0,0), size)`.
+
 ## Testing Card Dragging
 
-1.  **Ensure `ui_overlay.tscn` is instantiated in `game.tscn`**: Verify that you have instantiated the `scenes/ui_overlay.tscn` scene as a child of the `Game` node in `game.tscn` as instructed previously.
-2.  **Verify `CardHand` Path**: In `scripts/game.gd`, in the `_ready()` function, check if the path `$UIOverlay/CardHand` correctly references the `CardHand` node in your scene setup. Adjust the path if necessary.
+1.  **Ensure `ui_overlay.tscn` is instantiated in `game.tscn`**: Verify that you have instantiated the `scenes/ui_overlay.tscn` scene as a child of the `Game` node in `game.tscn` as instructed previously and in the "Scene Structure Verification" section above.
+2.  **Verify `CardHand` Path**: In `scripts/game.gd`, in the `_ready()` function, check if the path `$UIOverlay/CardHand` correctly references the `CardHand` node in your scene setup. Adjust the path if necessary and as verified in the "Card Hand Path Verification" section above.
 3.  **Instantiate Cards in CardHand**:
     *   Open `scenes/ui/card_hand.tscn`.
     *   In the `CardContainer` (HBoxContainer) node, instantiate a few instances of `scenes/ui/cards/unit_card.tscn` or `scenes/ui/cards/spell_card.tscn` as children. You can do this by dragging and dropping the card scene from the FileSystem dock into the `CardContainer`.
@@ -19,6 +38,13 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   Drag the input (mouse or touch). The selected card should follow your input within the card hand area.
     *   Release the input. The card should be "dropped" and return to its normal Z-index.
     *   Check the console output for "Card selected: [Card Name]" and "Card dropped" messages when you interact with the cards.
+
+## Implementing Unit Placement Logic (Next Steps after Card Dragging Verification)
+
+1. **Detect Card Drop Outside CardHand**: Implement logic in `game.gd` to detect when a dragged card is released (input release). Check if the release position is outside the bounds of the `CardHand` area.
+2. **Get Grid Position**: If the card is dropped outside the `CardHand`, convert the screen/mouse position to grid coordinates using the `GridManager`.
+3. **Validate Placement**: Use the `GridManager` to validate if the calculated grid position is a valid placement location. This will likely involve checking the `valid_placement` custom data layer in the TileSet.
+4. **Instantiate Unit Scene**: If the placement is valid, instantiate the unit scene corresponding to the dragged card at the validated grid position on the TileMap.
 
 ## Scenes
 
@@ -119,10 +145,10 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   **SpellStats:**
         *   Set the font and font size for the Label nodes (DurationStat/Label, CooldownStat/Label). Customize the text of the Label nodes.
         *   Set the font and font size for the Value Label nodes (DurationStat/Value, CooldownStat/Value).
-*   **EffectContainer:**
-    *   **AreaDisplay:** Assign a texture to the TextureRect node to display the spell's area of effect.
-*   **SpellEffects:**
-    *   Add visual effects (e.g., particles, animations) to represent the spell's effects.
+    *   **EffectContainer:**
+        *   **AreaDisplay:** Assign a texture to the TextureRect node to display the spell's area of effect.
+    *   **SpellEffects:**
+        *   Add visual effects (e.g., particles, animations) to represent the spell's effects.
 
 ### 9. unit_card.tscn
 
@@ -130,8 +156,8 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   **UnitStats:**
         *   Set the font and font size for the Label nodes (HealthStat/Label, DamageStat/Label). Customize the text of the Label nodes.
         *   Set the font and font size for the Value Label nodes (HealthStat/Value, DamageStat/Value). Customize the text of the Value Label nodes.
-*   **EffectContainer:**
-    *   **PlacementInfo:** Set the font and font size for the Label node. Customize the text of the Label node.
-*   **PreviewArea:**
-    *   Create a scene for the unit preview.
-    *   Add the unit preview scene as a child of the SubViewport.
+    *   **EffectContainer:**
+        *   **PlacementInfo:** Set the font and font size for the Label node. Customize the text of the Label node.
+    *   **PreviewArea:**
+        *   Create a scene for the unit preview.
+        *   Add the unit preview scene as a child of the SubViewport.
