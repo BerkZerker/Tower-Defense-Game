@@ -11,6 +11,8 @@ This file contains a detailed list of setup instructions for the scenes in the p
 - Added unit scene handling in cards
 - Updated combat component integration
 
+### NOTE - make sure all scenes open in the editor without error after changes are implemented
+
 ### Required Editor Setup Steps
 1. **Set Up Node Groups**:
    - Open `game.tscn`
