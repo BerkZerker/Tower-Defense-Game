@@ -1,2 +1,6 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+* .gd liniguist-language=gdscript
+* .tscn liniguist-language=godot-scene
+* .tres liniguist-language=godot-resource
+* .json liniguist-language=json
