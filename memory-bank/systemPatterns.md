@@ -6,7 +6,6 @@
 ```
 Root (Node2D)
 ├── GridManager
-│   ├── TileMap
 │   └── PlacementIndicator
 ├── UnitManager
 │   ├── Characters
@@ -34,6 +33,11 @@ Root (Node2D)
   - Unit placement validation
   - Pathfinding calculations
   - Visual feedback handling
+  - Visual grid representation using Line2D
+- Details:
+  - Replaced TileMap with a custom grid implementation for better control and performance.
+  - Uses a 2D array to store grid cell data, including placement validity.
+  - Visualizes the grid using Line2D nodes for grid lines.
 
 ## 2. Card System
 - Pattern: State Machine + Observer

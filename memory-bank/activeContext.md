@@ -5,10 +5,11 @@ Phase 1: Core Mechanics Implementation
 
 ### Active Tasks
 1. Grid System Development
-   - [x] Basic grid layout (TileMap setup)
+   - [x] Basic grid layout (Custom grid implementation)
    - [x] Tile-based coordinate system (Grid manager implemented)
    - [x] Unit placement validation (Grid position checking)
    - [x] Visual placement indicators (Placement indicator with feedback)
+   - [x] Visual grid representation using Line2D
    - [ ] Grid-based pathfinding implementation
 
 2. Unit System Foundation
@@ -140,6 +141,10 @@ Phase 1: Core Mechanics Implementation
 - [x] Configured unit-specific abilities and stats
   * Configured unit-specific abilities and stats
 - [x] Created human_todo.md file with scene setup instructions
+- [x] Replaced TileMap with custom grid implementation
+  * Implemented a custom grid system using Line2D for visual representation
+  * Stored grid cell data in a 2D array for efficient access and validation
+  * Added comments to grid_manager.gd and game.gd for better understanding and maintainability
 
 ## Current Testing Focus
 1. Grid system functionality in landscape orientation

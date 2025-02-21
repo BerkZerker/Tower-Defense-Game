@@ -13,7 +13,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
 2.  **Verify UI Overlay Instantiation**: Ensure that `scenes/ui_overlay.tscn` is instantiated as a child of the `Game` node.
 3.  **Verify GridManager Structure**: 
     *   Check for a `GridManager` node under `Game`.
-    *   Under `GridManager`, verify that `TileMap` and `PlacementIndicator` nodes exist as children.
+    *   Under `GridManager`, verify that `PlacementIndicator` node exists as a child.
 
 ### Card Hand Path Verification
 1.  **Open `game.gd`**: In the Godot editor, open `scripts/game.gd`.
@@ -43,8 +43,8 @@ This file contains a detailed list of setup instructions for the scenes in the p
 
 1. **Detect Card Drop Outside CardHand**: Implement logic in `game.gd` to detect when a dragged card is released (input release). Check if the release position is outside the bounds of the `CardHand` area.
 2. **Get Grid Position**: If the card is dropped outside the `CardHand`, convert the screen/mouse position to grid coordinates using the `GridManager`.
-3. **Validate Placement**: Use the `GridManager` to validate if the calculated grid position is a valid placement location. This will likely involve checking the `valid_placement` custom data layer in the TileSet.
-4. **Instantiate Unit Scene**: If the placement is valid, instantiate the unit scene corresponding to the dragged card at the validated grid position on the TileMap.
+3. **Validate Placement**: Use the `GridManager` to validate if the calculated grid position is a valid placement location.
+4. **Instantiate Unit Scene**: If the placement is valid, instantiate the unit scene corresponding to the dragged card at the validated grid position.
 
 ## Scenes
 
@@ -52,15 +52,6 @@ This file contains a detailed list of setup instructions for the scenes in the p
 
 *   **Instantiate UI Overlay:**
     *   Instantiate the `scenes/ui_overlay.tscn` scene as a child of the `Game` node in `game.tscn`. This will add the UI elements, including the `CardHand`, to the game scene.
-*   **TileMapLayer:**
-    *   Create a TileSet resource.
-    *   Add a TileMapLayer node as a child of GridManager.
-    *   Assign the TileSet resource to the TileMapLayer's `tile_set` property.
-    *   **TileSet Setup:**
-        *   Open the TileSet resource in the TileSet editor.
-        *   Add a new custom data layer named `valid_placement` of type `bool`.
-        *   For each tile that should be a valid unit placement cell, set the `valid_placement` custom data to `true`. Leave it `false` or unset for invalid placement tiles.
-    *   Create a tileset in the tileset editor.
 *   **MainTower:**
     *   Add a Sprite2D node as a child of MainTower.
     *   Assign a texture to the Sprite2D node.

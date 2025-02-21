@@ -26,10 +26,11 @@
 
 ### Phase 1: Core Mechanics
 - [x] Grid System
-  - [x] Basic grid layout
+  - [x] Basic grid layout (Custom grid implementation)
   - [x] Coordinate system
   - [x] Placement validation
   - [x] Visual indicators
+  - [x] Visual grid representation using Line2D
   - [ ] Pathfinding foundation
 
 - [ ] Unit Placement
