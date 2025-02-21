@@ -21,48 +21,71 @@ signal defeated()
 # Get GridManager singleton reference
 @onready var grid_manager = get_node("/root/GridManager")
 
+@export var detection_radius: float = 150.0  # Detection radius for nearby defenders
+
 # Enemy state
 var target: Node2D = null
-var current_path: Array[Vector2] = []
+var main_tower: Node2D = null  # Reference to the main tower
+var current_speed: float = 100.0  # Movement speed
 
 func _ready() -> void:
     # Connect component signals
     if health_component:
         health_component.defeated.connect(_on_defeated)
     
-    if movement_component:
-        movement_component.path_completed.connect(_on_path_completed)
-        movement_component.reached_target.connect(_on_reached_target)
-    
     if combat_component:
         combat_component.attack_finished.connect(_on_attack_finished)
+    
+    # Find main tower reference
+    var game_node = get_tree().get_first_node_in_group("game")
+    if game_node:
+        main_tower = game_node.get_node_or_null("MainTower")
+        if main_tower:
+            set_target(main_tower)
 
-func _physics_process(_delta: float) -> void:
-    _update_behavior()
+func _physics_process(delta: float) -> void:
+    _update_behavior(delta)
 
 func set_target(new_target: Node2D) -> void:
     target = new_target
-    if target and movement_component and grid_manager:
-        # Request path to target from GridManager
-        var path = grid_manager.get_path_to_target(global_position, target.global_position)
-        if path.size() > 0:
-            movement_component.move_along_path(path)
 
 func take_damage(amount: float) -> void:
     if health_component:
         health_component.take_damage(amount)
 
-func _update_behavior() -> void:
+func _update_behavior(delta: float) -> void:
     if not target:
+        if main_tower:
+            set_target(main_tower)
         return
+    
+    # Check for nearby defenders
+    var closest_defender = _find_closest_defender()
+    if closest_defender:
+        set_target(closest_defender)
+    elif target != main_tower and main_tower:
+        set_target(main_tower)
     
     if combat_component and combat_component.can_attack_target(target):
         movement_component.stop_moving()
         combat_component.start_attack(target)
-    elif not combat_component.is_attacking() and movement_component:
-        # Update path to target if needed
-        if current_path.is_empty():
-            set_target(target)
+    elif not combat_component.is_attacking():
+        # Move directly towards target using movement component
+        var direction = grid_manager.get_direction_to_target(global_position, target.global_position)
+        movement_component.move_in_direction(direction, delta)
+
+func _find_closest_defender() -> Node2D:
+    var defenders = get_tree().get_nodes_in_group("defenders")
+    var closest_defender = null
+    var closest_distance = detection_radius
+    
+    for defender in defenders:
+        var distance = grid_manager.get_distance_to_target(global_position, defender.global_position)
+        if distance < closest_distance:
+            closest_distance = distance
+            closest_defender = defender
+    
+    return closest_defender
 
 func _on_defeated() -> void:
     movement_component.stop_moving()

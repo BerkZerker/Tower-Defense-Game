@@ -143,6 +143,14 @@ func get_cell_center(world_pos: Vector2) -> Vector2:
 	var grid_pos = world_to_grid(world_pos)
 	return grid_to_world(grid_pos)
 
+# Returns direction vector to target
+func get_direction_to_target(from_pos: Vector2, target_pos: Vector2) -> Vector2:
+	return (target_pos - from_pos).normalized()
+
+# Gets distance between two positions
+func get_distance_to_target(from_pos: Vector2, target_pos: Vector2) -> float:
+	return from_pos.distance_to(target_pos)
+
 # Updates the placement indicator
 func update_placement_indicator(world_pos: Vector2) -> void:
 	# Update the placement indicator position and appearance

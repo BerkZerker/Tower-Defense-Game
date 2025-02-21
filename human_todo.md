@@ -2,6 +2,45 @@
 
 This file contains a detailed list of setup instructions for the scenes in the project. Anything that isn't code in a .gd script file should be done manually in the Godot editor.
 
+## Recently Implemented Features
+
+### ✅ Completed Code Changes
+- Added simplified enemy movement system
+- Updated grid manager with direction and distance methods
+- Implemented unit placement from cards
+- Added unit scene handling in cards
+- Updated combat component integration
+
+### Required Editor Setup Steps
+1. **Set Up Node Groups**:
+   - Open `game.tscn`
+   - Select the Game node
+   - In Inspector → Node → Groups, add the "game" group
+   - For each defender unit scene:
+     - Open the scene
+     - Select the root node
+     - In Inspector → Node → Groups, add the "defenders" group
+
+2. **Configure Unit Cards**:
+   - Open each unit card instance in `card_hand.tscn`
+   - In the Inspector, set:
+     - unit_name
+     - unit_cost
+     - unit_scene_path (pointing to the corresponding unit scene)
+
+3. **Configure Enemy Properties**:
+   - Open `base_enemy.tscn`
+   - Set detection_radius in Inspector (default: 150.0)
+   - Ensure all components are present:
+     - HealthComponent
+     - MovementComponent
+     - CombatComponent
+
+4. **SpawnPoints Setup**:
+   - In `game.tscn`, verify SpawnPoints node exists
+   - Add Marker2D nodes as spawn locations
+   - Position spawn points around the map edges
+
 ## General Editor Steps
 
 *   **Reload Scripts:** If you encounter "Could not find base class" errors after creating or renaming scripts, try manually reloading the scripts in the Godot editor. You can usually do this by going to "Project" -> "Reload Scripts" in the Godot editor menu.
@@ -24,6 +63,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
 1. **Check `BaseCard.gd`**: Open `scripts/ui/cards/BaseCard.gd`.
 2. **Verify `is_card()` Method**: Ensure the `is_card()` method exists and returns `true`.
 3. **Verify `get_card_rect()` Method**: Ensure the `get_card_rect()` method exists and returns `Rect2(Vector2(0,0), size)`.
+4. ✅ **Verify `get_unit_scene()` Method**: Added to BaseCard and implemented in UnitCard.
 
 ## Testing Card Dragging
 
@@ -39,12 +79,11 @@ This file contains a detailed list of setup instructions for the scenes in the p
     *   Release the input. The card should be "dropped" and return to its normal Z-index.
     *   Check the console output for "Card selected: [Card Name]" and "Card dropped" messages when you interact with the cards.
 
-## Implementing Unit Placement Logic (Next Steps after Card Dragging Verification)
-
-1. **Detect Card Drop Outside CardHand**: Implement logic in `game.gd` to detect when a dragged card is released (input release). Check if the release position is outside the bounds of the `CardHand` area.
-2. **Get Grid Position**: If the card is dropped outside the `CardHand`, convert the screen/mouse position to grid coordinates using the `GridManager`.
-3. **Validate Placement**: Use the `GridManager` to validate if the calculated grid position is a valid placement location.
-4. **Instantiate Unit Scene**: If the placement is valid, instantiate the unit scene corresponding to the dragged card at the validated grid position.
+## ✅ Implementing Unit Placement Logic (Completed)
+- Card dropping detection implemented
+- Grid position conversion added
+- Placement validation integrated
+- Unit instantiation from cards working
 
 ## Scenes
 
@@ -99,7 +138,7 @@ This file contains a detailed list of setup instructions for the scenes in the p
 ### 5. card_hand.tscn
 
 *   **HandArea:**
-    *   Instantiate card scenes (unit\_card.tscn, spell\_card.tscn) and add them as children to the CardContainer (HBoxContainer).
+    *   Instantiate card scenes (unit_card.tscn, spell_card.tscn) and add them as children to the CardContainer (HBoxContainer).
     *   Implement logic to dynamically add and remove cards from the hand.
 *   **DeckArea:**
     *   Add a visual representation of the deck (e.g., a TextureRect with a card stack texture).
