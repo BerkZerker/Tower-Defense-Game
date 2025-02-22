@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_range"]
 radius = 150.0
 
-[node name="StaticDefender" instance=ExtResource("1_ueoif")]
+[node name="StaticDefender" groups=["defenders"] instance=ExtResource("1_ueoif")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_m2efy")

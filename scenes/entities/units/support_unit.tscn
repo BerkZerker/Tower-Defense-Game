@@ -15,5 +15,5 @@ texture = ExtResource("2_t8u4k")
 
 [node name="EffectArea" type="Area2D" parent="." index="7"]
 
-[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" index="0"]
+[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" index="0" groups=["defenders"]]
 shape = SubResource("CircleShape2D_effect")

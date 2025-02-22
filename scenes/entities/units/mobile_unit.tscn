@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_range"]
 radius = 100.0
 
-[node name="MobileUnit" instance=ExtResource("1_d3rm4")]
+[node name="MobileUnit" groups=["defenders"] instance=ExtResource("1_d3rm4")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_p4k3l")

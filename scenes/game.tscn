@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkcx1"]
 size = Vector2(64, 64)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["game"]]
 
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("2_u8k7p")
