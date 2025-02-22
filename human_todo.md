@@ -14,14 +14,20 @@ This file contains a detailed list of setup instructions for the scenes in the p
 ### NOTE - make sure all scenes open in the editor without error after changes are implemented
 
 ### Required Editor Setup Steps
-1. **Set Up Node Groups**:
+1. **Set Up Node Groups** (These should be global groups):
    - Open `game.tscn`
-   - Select the Game node
-   - In Inspector → Node → Groups, add the "game" group
-   - For each defender unit scene:
-     - Open the scene
-     - Select the root node
-     - In Inspector → Node → Groups, add the "defenders" group
+     - Select the Game node
+     - In Inspector → Node → Groups, add the "game" group
+   - Open and add "defenders" group to these scenes:
+     - Open `scenes/entities/units/static_defender.tscn`
+       - Select the root StaticDefender node
+       - In Inspector → Node → Groups, add the "defenders" group
+     - Open `scenes/entities/units/mobile_unit.tscn`
+       - Select the root MobileUnit node
+       - In Inspector → Node → Groups, add the "defenders" group
+     - Open `scenes/entities/units/support_unit.tscn`
+       - Select the root SupportUnit node
+       - In Inspector → Node → Groups, add the "defenders" group
 
 2. **Configure Unit Cards**:
    - Open each unit card instance in `card_hand.tscn`
