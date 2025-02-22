@@ -1,0 +1,31 @@
+# Project Intelligence
+
+## Key Implementation Paths
+
+- The project is using a custom grid implementation instead of TileMap. The grid is managed by the GridManager autoload singleton.
+- The project is using a component-based architecture for units. The base components are HealthComponent, CombatComponent, MovementComponent, and AbilityComponent.
+
+## User Preferences and Workflow
+
+- The project is targeting mobile platforms with landscape orientation. The base resolution is 1280x720.
+
+## Project-Specific Patterns
+
+- The project is using the Singleton pattern for global managers such as GameState, GridManager, CardManager, and AudioManager.
+- The project is using the Observer pattern for system communication such as unit state changes, combat events, wave progression, and card actions.
+- The project is using the State Machine pattern for game states, wave management, unit behavior, and card states.
+- The project is using the Command pattern for card actions, unit abilities, player inputs, and game commands.
+
+## Known Challenges
+
+- Implementing efficient pathfinding for the custom grid system.
+- Optimizing performance for mobile devices.
+
+## Evolution of Project Decisions
+
+- The project switched from TileMap to a custom grid implementation for better control and performance.
+
+## Tool Usage Patterns
+
+- The project is using Godot Engine 4.x with GDScript as the primary scripting language.
+- The project is using Git for version control.

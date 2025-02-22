@@ -1,17 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://csl7pyagonvhm"]
+[gd_scene load_steps=3 format=3 uid="uid://csl7pyagonvhm"]
 
-[ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_ueoif"]
-[ext_resource type="Texture2D" uid="uid://d2hxgji3fupc7" path="res://assets/textures/towers/combat/spr_tower_archer.png" id="2_m2efy"]
+[ext_resource type="PackedScene" uid="uid://drfbhddj6yof4" path="res://scenes/entities/base_unit.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scripts/entities/units/static_defender.gd" id="2_script"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_range"]
-radius = 150.0
-
-[node name="StaticDefender" groups=["defenders"] instance=ExtResource("1_ueoif")]
-
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_m2efy")
-
-[node name="RangeArea" type="Area2D" parent="." index="6"]
-
-[node name="RangeShape" type="CollisionShape2D" parent="RangeArea" index="0"]
-shape = SubResource("CircleShape2D_range")
+[node name="StaticDefender" instance=ExtResource("1_base")]
+script = ExtResource("2_script")

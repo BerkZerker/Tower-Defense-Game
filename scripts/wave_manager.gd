@@ -30,9 +30,9 @@ var waves = [
 
 # References to scenes
 var enemy_scenes = {
-	"normal_slime": preload("res://scenes/entities/units/normal_slime.tscn"),
-	"bat": preload("res://scenes/entities/units/bat.tscn"),
-	"goblin": preload("res://scenes/entities/units/goblin.tscn")
+	"normal_slime": preload("res://scenes/entities/enemies/normal_slime.tscn"),
+	"bat": preload("res://scenes/entities/enemies/bat.tscn"),
+	"goblin": preload("res://scenes/entities/enemies/goblin.tscn")
 }
 
 # Node references

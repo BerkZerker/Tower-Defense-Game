@@ -31,9 +31,9 @@ Verify these scene-script connections:
    - Save and reload to verify
 
 3. **Base Enemy Scene**
-   - Scene: `scenes/entities/base_enemy.tscn`
+   - Scene: `scenes/entities/enemies/base_enemy.tscn`
    - Node: BaseEnemy (root)
-   - Script: `res://scripts/entities/base_enemy.gd`
+   - Script: `res://scripts/entities/enemies/base_enemy.gd`
    - Save and reload to verify
 
 4. **Placement Indicator**
@@ -127,7 +127,7 @@ Verify these scene-script connections:
       4. Save the card_hand scene
 
 3. **Configure Enemy Properties**:
-   - Open `base_enemy.tscn`
+   - Open `scenes/entities/enemies/base_enemy.tscn`
    - Set detection_radius in Inspector (default: 150.0)
    - Ensure all components are present:
      - HealthComponent
@@ -211,13 +211,26 @@ Verify these scene-script connections:
     *   Create animations for the unit (e.g., idle, attack, move).
     *   Add the animations to the AnimationPlayer node.
 
-### 3. Individual Unit Scenes (static_defender.tscn, mobile_unit.tscn, support_unit.tscn, basic_enemy.tscn, elite_enemy.tscn, boss_enemy.tscn)
+### 3. Individual Unit Scenes
 
-*   **Inherit from base_unit.tscn:** Ensure each unit scene inherits from `base_unit.tscn`.
-*   **Sprite2D:** Assign a unique texture to the Sprite2D node for each unit type.
-*   **CollisionShape2D:** Adjust the shape and size of the CollisionShape2D to accurately match the unit's sprite.
-*   **Unique Components:** Add any additional components specific to the unit type (e.g., a ranged attack component for a static defender).
-*   **Animations:** Create and add animations specific to the unit type (e.g., a special attack animation for a boss enemy).
+**Defender Units** (in `scenes/entities/units/`):
+- `static_defender.tscn`
+- `mobile_unit.tscn`
+- `support_unit.tscn`
+
+**Enemy Units** (in `scenes/entities/enemies/`):
+- `basic_enemy.tscn`
+- `elite_enemy.tscn`
+- `boss_enemy.tscn`
+
+For each scene:
+*   **Inherit from base_unit.tscn:** Ensure each unit scene inherits from `base_unit.tscn`
+*   **Sprite2D:** Assign a unique texture to the Sprite2D node for each unit type
+*   **CollisionShape2D:** Adjust the shape and size of the CollisionShape2D to accurately match the unit's sprite
+*   **Unique Components:**
+    - For defenders: Add components specific to the defender type (e.g., ranged attack for static defender)
+    - For enemies: Add components specific to the enemy type (e.g., special abilities for boss enemy)
+*   **Animations:** Create and add animations specific to the unit type
 
 ### 4. ui_overlay.tscn
 

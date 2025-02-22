@@ -76,6 +76,7 @@
 - [x] Documentation setup
 - [x] Basic scene templates
 - [ ] Core manager scripts
+  - [x] CardManager
 
 ## Development Notes
 - Current priority is Phase 1: Core Mechanics

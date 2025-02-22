@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dhtstn3lqa873"]
+[gd_scene load_steps=3 format=3 uid="uid://dhtstn3lqa873"]
+
+[ext_resource type="PackedScene" uid="uid://c24ofmafhgyfs" path="res://scenes/ui/cards/unit_card.tscn" id="1_kbnuu"]
+[ext_resource type="Script" path="res://scenes/ui/card_hand.gd" id="1_s4ykm"]
 
 [node name="CardHand" type="CanvasLayer"]
+script = ExtResource("1_s4ykm")
 
 [node name="HandArea" type="Control" parent="."]
 layout_mode = 3
@@ -22,8 +26,25 @@ offset_top = -70.0
 offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 alignment = 1
+
+[node name="UnitCard" parent="HandArea/CardContainer" instance=ExtResource("1_kbnuu")]
+layout_mode = 2
+unit_name = "Static Defender"
+unit_cost = 100
+
+[node name="UnitCard2" parent="HandArea/CardContainer" instance=ExtResource("1_kbnuu")]
+layout_mode = 2
+unit_name = "Mobile Unit"
+unit_cost = 150
+unit_scene_path = "res://scenes/entities/units/mobile_defender.tscn"
+
+[node name="UnitCard3" parent="HandArea/CardContainer" instance=ExtResource("1_kbnuu")]
+layout_mode = 2
+unit_name = "Support Unit"
+unit_cost = 200
+unit_scene_path = "res://scenes/entities/units/support_defender.tscn"
 
 [node name="DeckArea" type="Control" parent="."]
 layout_mode = 3

@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3")
 [autoload]
 
 GridManager="*res://autoload/grid_manager.gd"
+CardManager="*res://autoload/card_manager.gd"
 
 [display]
 

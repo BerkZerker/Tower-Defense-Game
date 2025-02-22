@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_effect"]
 radius = 120.0
 
-[node name="SupportUnit" instance=ExtResource("1_w5r3p")]
+[node name="SupportUnit" groups=["defenders"] instance=ExtResource("1_w5r3p")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_t8u4k")
@@ -15,5 +15,5 @@ texture = ExtResource("2_t8u4k")
 
 [node name="EffectArea" type="Area2D" parent="." index="7"]
 
-[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" index="0" groups=["defenders"]]
+[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" index="0"]
 shape = SubResource("CircleShape2D_effect")

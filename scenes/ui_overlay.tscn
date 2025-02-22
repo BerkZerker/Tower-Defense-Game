@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://0o2hvdwsg3ti"]
+[gd_scene load_steps=2 format=3 uid="uid://0o2hvdwsg3ti"]
+
+[ext_resource type="PackedScene" uid="uid://dhtstn3lqa873" path="res://scenes/ui/card_hand.tscn" id="1_kru82"]
 
 [node name="UIOverlay" type="CanvasLayer"]
 
@@ -59,3 +61,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CardHand" parent="." instance=ExtResource("1_kru82")]
