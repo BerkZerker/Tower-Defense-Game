@@ -31,19 +31,22 @@ This file contains a detailed list of setup instructions for the scenes in the p
 
 2. **Configure Unit Cards**:
    - Open `scenes/ui/card_hand.tscn`
-   - For each unit card in the CardContainer:
-     - Configure StaticDefender card:
-       - unit_name: "Static Defender"
-       - unit_cost: 100
-       - unit_scene_path: "res://scenes/entities/units/static_defender.tscn"
-     - Configure MobileUnit card:
-       - unit_name: "Mobile Unit"
-       - unit_cost: 150
-       - unit_scene_path: "res://scenes/entities/units/mobile_unit.tscn"
-     - Configure SupportUnit card:
-       - unit_name: "Support Unit"
-       - unit_cost: 200
-       - unit_scene_path: "res://scenes/entities/units/support_unit.tscn"
+   - In the CardContainer node:
+     1. First instantiate the cards:
+        - Drag `scenes/ui/cards/unit_card.tscn` from the FileSystem dock into CardContainer 3 times to create three card instances
+     2. Then configure each card instance:
+        - First card:
+          - unit_name: "Static Defender"
+          - unit_cost: 100
+          - unit_scene_path: "res://scenes/entities/units/static_defender.tscn"
+        - Second card:
+          - unit_name: "Mobile Unit"
+          - unit_cost: 150
+          - unit_scene_path: "res://scenes/entities/units/mobile_unit.tscn"
+        - Third card:
+          - unit_name: "Support Unit"
+          - unit_cost: 200
+          - unit_scene_path: "res://scenes/entities/units/support_unit.tscn"
 
 3. **Configure Enemy Properties**:
    - Open `base_enemy.tscn`
