@@ -2,6 +2,66 @@
 
 This file contains a detailed list of setup instructions for the scenes in the project. Anything that isn't code in a .gd script file should be done manually in the Godot editor.
 
+## Scene Script Verification
+
+IMPORTANT: Each scene needs its script properly attached for functionality. For each scene:
+1. Open the scene
+2. Select the root node
+3. In the Inspector panel, look for the "Node" section at the top
+4. If no script is attached:
+   - Click the dropdown next to "Script"
+   - Choose "Load"
+   - Navigate to and select the correct script
+5. After attaching, click the script path to verify it opens the correct script
+6. Save the scene
+7. Reload the scene to verify script stays attached
+
+Verify these scene-script connections:
+
+1. **Game Scene**
+   - Scene: `scenes/game.tscn`
+   - Node: Game (root)
+   - Script: `res://scripts/game.gd`
+   - Save and reload to verify
+
+2. **Grid Manager**
+   - Scene: Load scene containing GridManager
+   - Node: GridManager
+   - Script: `res://autoload/grid_manager.gd`
+   - Save and reload to verify
+
+3. **Base Enemy Scene**
+   - Scene: `scenes/entities/base_enemy.tscn`
+   - Node: BaseEnemy (root)
+   - Script: `res://scripts/entities/base_enemy.gd`
+   - Save and reload to verify
+
+4. **Placement Indicator**
+   - Scene: Scene containing PlacementIndicator
+   - Node: PlacementIndicator
+   - Script: `res://scripts/placement_indicator.gd`
+   - Save and reload to verify
+
+5. **Wave Manager**
+   - Scene: Scene containing WaveManager
+   - Node: WaveManager
+   - Script: `res://scripts/wave_manager.gd`
+   - Save and reload to verify
+
+6. **Card System**
+   - Scene: `scenes/ui/cards/unit_card.tscn`
+   - Node: UnitCard (root)
+   - Script: `res://scripts/ui/cards/unit_card.gd`
+   - After attaching:
+     * Look for "Script Variables" section in Inspector
+     * Should see: unit_name, unit_cost, unit_scene_path
+     * If not visible, try:
+       1. Save scene
+       2. Reload scene
+       3. Click script path to verify correct script
+       4. Select node again to refresh Inspector
+   - Save and reload to verify all working
+
 ## Recently Implemented Features
 
 ### ✅ Completed Code Changes
@@ -29,24 +89,42 @@ This file contains a detailed list of setup instructions for the scenes in the p
        - Select the root SupportUnit node
        - In Inspector → Node → Groups, add the "defenders" group
 
-2. **Configure Unit Cards**:
-   - Open `scenes/ui/card_hand.tscn`
-   - In the CardContainer node:
-     1. First instantiate the cards:
-        - Drag `scenes/ui/cards/unit_card.tscn` from the FileSystem dock into CardContainer 3 times to create three card instances
-     2. Then configure each card instance:
-        - First card:
-          - unit_name: "Static Defender"
-          - unit_cost: 100
-          - unit_scene_path: "res://scenes/entities/units/static_defender.tscn"
-        - Second card:
-          - unit_name: "Mobile Unit"
-          - unit_cost: 150
-          - unit_scene_path: "res://scenes/entities/units/mobile_unit.tscn"
-        - Third card:
-          - unit_name: "Support Unit"
-          - unit_cost: 200
-          - unit_scene_path: "res://scenes/entities/units/support_unit.tscn"
+2. **Set Up Unit Card System**:
+
+   A. Create the base unit card:
+      1. Create new scene at `scenes/ui/cards/unit_card.tscn`:
+         - Add a Control node as root
+         - Rename it to "UnitCard"
+         - Attach script: `scripts/ui/cards/unit_card.gd`
+         - Save the scene
+
+   B. Create card instances in card hand:
+      1. Open `scenes/ui/card_hand.tscn`
+      2. Find the CardContainer node (HBoxContainer)
+      3. Add three UnitCard instances:
+         - From FileSystem dock, drag `unit_card.tscn` into CardContainer three times
+
+   C. Configure the cards:
+      1. In CardContainer, select first UnitCard instance:
+         - In Inspector, find "Script Variables" section
+         - Set:
+           unit_name = "Static Defender"
+           unit_cost = 100
+           unit_scene_path = "res://scenes/entities/units/static_defender.tscn"
+      
+      2. Select second UnitCard instance:
+         - Set:
+           unit_name = "Mobile Unit"
+           unit_cost = 150
+           unit_scene_path = "res://scenes/entities/units/mobile_unit.tscn"
+      
+      3. Select third UnitCard instance:
+         - Set:
+           unit_name = "Support Unit"
+           unit_cost = 200
+           unit_scene_path = "res://scenes/entities/units/support_unit.tscn"
+      
+      4. Save the card_hand scene
 
 3. **Configure Enemy Properties**:
    - Open `base_enemy.tscn`

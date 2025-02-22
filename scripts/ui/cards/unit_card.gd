@@ -1,6 +1,9 @@
 extends BaseCard
 
-# Unit properties
+# These variables will show up in the Inspector panel when the script is attached to a node
+#   unit_name: Name of the unit this card creates
+#   unit_cost: Resource cost to play this card
+#   unit_scene_path: Which unit scene this card will place (.tscn file)
 @export var unit_name: String = "Default Unit"
 @export var unit_cost: int = 1
 @export_file("*.tscn") var unit_scene_path: String = "res://scenes/entities/units/static_defender.tscn"
